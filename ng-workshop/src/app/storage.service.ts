@@ -18,6 +18,7 @@ export function storageFactory(platformId: string): any {
 	if (isPlatformServer(platformId)) {
 		return new ServerStorage();
 	}
+	throw new Error('No implementation for this platform: ' + platformId);
 }
 
 export const storageServerProvider: Provider = {
